@@ -1,0 +1,32 @@
+{
+  "name": "express-es6-sample",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npm run prod",
+    "server": "babel-node ./src/bin/www",
+    "dev": "SET NODE_ENV=development npm run watch ./src/bin/www",
+    "prod": "npm run build && NODE_ENV=production node ./dist/bin/www",
+    "build": "npm run clean && babel ./src --config-file ./.babelrc --out-dir dist",
+    "clean": "rimraf dist",
+    "watch": "nodemon --config ./nodemon.json --"
+  },
+  "dependencies": {
+    "bigint-hash": "^0.2.2",
+    "cookie-parser": "^1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "mongoose": "^5.7.14",
+    "morgan": "~1.9.0",
+    "rimraf": "^2.7.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.5",
+    "@babel/core": "^7.7.5",
+    "@babel/node": "^7.7.4",
+    "@babel/preset-env": "^7.7.5",
+    "eslint": "^5.16.0",
+    "eslint-plugin-import": "^2.18.2",
+    "nodemon": "^1.19.4"
+  }
+}
